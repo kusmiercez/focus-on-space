@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a90b2d5158.js" crossorigin="anonymous"></script>
+
+    <title>Focus on Space</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div><a href="../index.html" class="brand-title"></a></div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../news/news.html">News</a></li>
+                <li><a href="../weather/weather.html">Weather</a></li>
+                <li><a href="../pictures/pictures.html">Pictures</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="contact">
+        <div class="container">
+            <h1>Contact</h1>
+            <div class="split">
+                <div class="address">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <div class="info">
+                        <h2>Name</h2>
+                        <p>Focus on Space - Astronomy Portal</p>
+                    </div>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="info">
+                        <h2>Address</h2>
+                        <p>ul. Powstańców Śląskich 85</p>
+                        <p>01-355 Warsaw, Poland</p>
+                    </div>
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="info">
+                        <h2>E-mail</h2>
+                        <p>fos@astroportal.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Message us</h2>
+                    <form action="" class="form">
+                        <table class="row">
+                            <tr>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="name"></label>
+                                        <input type="text" name="name" placeholder="Name" id="name">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="email"></label>
+                                        <input type="email" name="email" placeholder="E-mail" id="email">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="input-group">
+                            <label for="subject"></label>
+                            <input type="text" name="subject" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="input-group">
+                            <label for="message"></label>
+                            <textarea name="message" placeholder="Message" id="message" rows="3"></textarea>
+                        </div>
+                        <p class="error-msg">Please fill in the fields correctly!</p>
+                        <div class="button-area"><button class="send-btn">Send</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
