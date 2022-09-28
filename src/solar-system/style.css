@@ -81,6 +81,18 @@ body {
     width: 80px;
 }
 
+/* [data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 200%;
+    border-bottom: 1px solid white;
+    background: gray;
+} */
+
 #mercury {
     height: 7px;
     width: 7px;

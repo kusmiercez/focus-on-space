@@ -1,6 +1,8 @@
 const currentDay = document.querySelector('#day');
 const date = document.querySelector('#date');
-const time = document.querySelector('#time');
+const clockHour = document.querySelector('#hour');
+const clockMinutes = document.querySelector('#minutes');
+const clockSeconds = document.querySelector('#seconds');
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const months = ['December', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November'];
 
@@ -20,7 +22,9 @@ setInterval(showDate = () => {
 
     currentDay.textContent = days[currentDate.getDay()];
     date.textContent = `${day} ${months[month]} ${year}`;
-    time.textContent = `${hours}:${minutes}:${seconds}`;
+    clockHour.textContent = hours;
+    clockMinutes.textContent = minutes;
+    clockSeconds.textContent = seconds;
 }, 1000)
 
 showDate();

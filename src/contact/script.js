@@ -1,5 +1,7 @@
-const emailInput = document.querySelector('#email');
-const textarea = document.querySelector('#message');
+const name = document.querySelector('#name');
+const email = document.querySelector('#email');
+const subject = document.querySelector('#subject');
+const message = document.querySelector('#message');
 const sendBtn = document.querySelector('.send-btn');
 const errorMsg = document.querySelector('.error-msg');
 
@@ -15,26 +17,65 @@ const clearError = e => {
     e.classList.add('correct');
 }
 
-const checkFields = input => {
-    input.forEach(e => {
-        if (e.value === '') {
-            showError(e)
-        } else {
-            clearError(e)
-            checkMail()
-        }
-    })
+const checkMail = () => {
+    if (email.value === '') {
+        showError(email);
+        return false;
+    }
+    const reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!email.value.match(reg)) {
+        showError(email);
+        return false
+    }
+    clearError(email)
+    return true;
 }
 
-const checkMail = () => {
-    const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (reg.test(emailInput.value))
-        clearError(emailInput);
-    else
-        showError(emailInput);
+const checkMessage = () => {
+    requiredChar = 25;
+    if (message.value.length < requiredChar) {
+        showError(message)
+        return false;
+    }
+    clearError(message)
+    return true
+}
+
+const clearFields = (fields) => {
+    fields.forEach(field => {
+        field.value = '';
+    field.classList.remove('correct');
+    field.classList.remove('error');
+})
+}
+
+const validateForm = () => {
+    if (checkMail() && checkMessage()) {
+        sendEmail()
+        console.log("ok")
+        clearFields([name, email, subject, message])
+    }
+}
+
+(function() {
+    emailjs.init('AjD75cgBirHrr55vO');
+}());
+
+const sendEmail = () => {
+    const serviceId = "service_1scmvve";
+    const templateId = "template_drmxe2t";
+    const params = {
+        from_name: name.value,
+        email: email.value,
+        message: message.value
+    }
+    
+    emailjs.send(serviceId, templateId, params)
+        .then(res => console.log("Success", res.status));
 }
 
 sendBtn.addEventListener('click', e => {
     e.preventDefault();
-    checkFields([emailInput, textarea])
+    validateForm()
 })
+

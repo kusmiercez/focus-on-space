@@ -1,4 +1,5 @@
 const descriptions = document.querySelectorAll('p')
+const detailsTemp = document.querySelector('.details-temp');
 const details = document.querySelectorAll('.details');
 let data;
 
@@ -96,36 +97,32 @@ const sendApiRequest = () => {
         })
 }
 
-const groupBy = (arr, property) => {
-    return arr.reduce((acc, obj) => {
-        const key = obj[property];
-        acc[key - 1] = obj;
-        return acc;
-    }, []);
+const groupById = (arr) => {
+   return arr.sort((firstId, secondId) => {
+        return firstId.id - secondId.id
+    })
 }
 
 const addDescription = () => {
-    const result = groupBy(data, "id")
-    let i = 1;
+    const sortedData = groupById(data)
+    let i = 0;
     descriptions.forEach(d => {
-        d.textContent = result[i++][0].description;
+        d.textContent = sortedData[i++].description;
     })
 }
 
 const addDetails = () => {
-    let j = 0;
-    details.forEach(d => {
-        d.innerHTML = `
-            <ul>
-            <li>Diameter (km): <span>${PLANETS_DETAILS[j].diametr}</span></li>
-            <li>Rotation Period (hours): <span>${PLANETS_DETAILS[j].rotationPeriod}</span></li>
-            <li>Distance from Sun (10^6 km): <span>${PLANETS_DETAILS[j].distance}</span></li>
-            <li>Orbital Period (days): <span>${PLANETS_DETAILS[j].orbitalPeriod}</span></li>
-            <li>Mean Temperature (C): <span>${PLANETS_DETAILS[j].meanTemp}</span></li>
-            <li>Number of Moons: <span>${PLANETS_DETAILS[j].moons}</span></li>
-            </ul>
-            `
-        j++
+    let i = 0;
+    details.forEach(details => {
+        const newDetails = detailsTemp.content.cloneNode(true)
+        newDetails.querySelector('#diametr').textContent = PLANETS_DETAILS[i].diametr;
+        newDetails.querySelector('#rot-period').textContent = PLANETS_DETAILS[i].rotationPeriod;
+        newDetails.querySelector('#distance').textContent = PLANETS_DETAILS[i].distance;
+        newDetails.querySelector('#orb-period').textContent = PLANETS_DETAILS[i].orbitalPeriod;
+        newDetails.querySelector('#temp').textContent = PLANETS_DETAILS[i].meanTemp;
+        newDetails.querySelector('#moons').textContent = PLANETS_DETAILS[i].moons;
+        details.appendChild(newDetails)
+        i++
     })
 }
 

@@ -16,7 +16,7 @@ const month = currentDate.getMonth() + 1;
 const day = currentDate.getDate();
 
 const sendApiRequest = () => {
-    fetch(`https://newsapi.org/v2/everything?q=astronomy&from=${year}-${month}-${day-5}&to=${year}-${month}-${day}&pageSize=60&sortBy=publishedAt&language=en&apiKey=${API_KEY}`)
+    fetch(`https://newsapi.org/v2/everything?q=astronomy&searchIn=title,description&from=${year}-${month}-${day-5}&to=${year}-${month}-${day}&pageSize=60&sortBy=publishedAt&language=en&apiKey=${API_KEY}`)
         .then(response => response.json())
         .then(response => {
             console.log(response)

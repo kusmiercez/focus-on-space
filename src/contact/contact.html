@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script defer src="script.js"></script>
     <script src="https://kit.fontawesome.com/a90b2d5158.js" crossorigin="anonymous"></script>
 
@@ -58,7 +59,7 @@
 
                 <div class="contact-form">
                     <h2>Message us</h2>
-                    <form action="" class="form">
+                    <form method="post" class="form">
                         <table class="row">
                             <tr>
                                 <td>
@@ -70,7 +71,7 @@
                                 <td>
                                     <div class="input-group">
                                         <label for="email"></label>
-                                        <input type="email" name="email" placeholder="E-mail" id="email">
+                                        <input type="email" name="email" placeholder="E-mail" id="email" onkeyup="checkMail()">
                                     </div>
                                 </td>
                             </tr>
@@ -81,7 +82,7 @@
                         </div>
                         <div class="input-group">
                             <label for="message"></label>
-                            <textarea name="message" placeholder="Message" id="message" rows="3"></textarea>
+                            <textarea name="message" placeholder="The message must contain min 30 characters" id="message" rows="3" onkeyup="checkMessage()"></textarea>
                         </div>
                         <p class="error-msg">Please fill in the fields correctly!</p>
                         <div class="button-area"><button class="send-btn">Send</button></div>
