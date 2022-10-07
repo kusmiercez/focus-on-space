@@ -1,15 +1,9 @@
 const cardTemp = document.querySelector('.temp-card')
 const grid = document.querySelector('.grid')
 const API_KEY = '7b5a196484ee4c7baa609a95c32ef4cd';
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '05eca59d77msh08269870e87fa7cp18d311jsn203a1d285d2b',
-        'X-RapidAPI-Host': 'space-news.p.rapidapi.com'
-    }
-};
 let newCard;
 let allNews;
+
 const currentDate = new Date;
 const year = currentDate.getFullYear();
 const month = currentDate.getMonth() + 1;
@@ -21,6 +15,16 @@ const sendApiRequest = () => {
         .then(response => {
             console.log(response)
             allNews = response.articles;
+            prepareNewsCard()
+        })
+}
+
+const sendDbRequest = () => {
+    fetch('http://localhost:3000/news')
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            allNews = response;
             prepareNewsCard()
         })
 }
@@ -42,7 +46,4 @@ const prepareNewsCard = () => {
     });
 }
 
-sendApiRequest()
-
-
-
+sendDbRequest()
