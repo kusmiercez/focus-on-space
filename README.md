@@ -1,1 +1,1 @@
-A website about space with current news, photos and interesting facts. Working with Data and APIs in JavaScript, server-side with Node.js.
+Website design about space, divided into parts frontend and backend. Frontend is a collection of static pages from original CSS / JavaScript animations communicating with the server part via REST API. The backend has been written using Node.js and the Express framework. Data from external API are stored in MongoDB.

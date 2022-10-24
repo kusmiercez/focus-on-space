@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/common-style.css">
     <link rel="stylesheet" href="style.css">
+    <script defer src="../scripts/nav.js"></script>
     <script defer type="text/javascript" src="vanilla-tilt.js"></script>
     <script defer src="script.js"></script>
     <script defer src="../scripts/nav.js"></script>
@@ -28,8 +29,15 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="news.html">News</a></li>
-                <li><a href="../weather/weather.html">Weather</a></li>
-                <li><a href="../pictures/pictures.html">Pictures</a></li>
+                <li class="expandable-li">
+                    <input type="checkbox" id="more-list">
+                    <label for="more-list">More <i class="fa-solid fa-caret-down"></i></label>
+                    <ul class="dropdown">
+                        <li><a href="../solar-system/solar-system.html">Solar System</a></li>
+                        <li><a href="../climate/climate.html">Climate</a></li>
+                        <li><a href="../picture/picture.html">Picture of the day</a></li>
+                    </ul>
+                </li>
                 <li><a href="../contact/contact.html">Contact</a></li>
             </ul>
         </div>

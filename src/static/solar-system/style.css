@@ -1,57 +1,78 @@
-body {
-    background-image: url(img/star6.png);
-    width: 100vw;
+.scroll {
+    width: 880px;
+    height: 880px;
+    overflow: hidden;
+    margin: auto;
+    padding-top: 20px;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-inline: auto;
-    width: min(90%, 80.5rem);
-    padding: 3rem 0;
-    color: antiquewhite;
+.star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: animate 8s ease-in-out infinite,
+        backgroundmove 16s linear infinite;
 }
 
-.container h1 {
-    text-align: center;
-    padding-block: 1em;
-    font-size: 2.8rem;
-    font-weight: 700;
+.star.star1 {
+    animation-delay: 0s;
+    background: url('../style/img/star1.png');
 }
 
-.container h1::before,
-.container h1::after {
-    content: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
-    font-size: 1px;
-    background: var(--light);
+.star.star2 {
+    animation-delay: -1s;
+    background: url('../style/img/star2.png');
 }
 
-@media (max-width: 481px) {
-    .container h1 {
-    font-size: 2em;
+/* .star.star3 {
+    animation-delay: -1s;
+    background: url('../style/img/star6.png');
+} */
+
+
+@keyframes animate {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        opacity: 0;
     }
-    .container h1::before,
-    .container h1::after {
-    content: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        opacity: 1;
+    }
 }
+
+@keyframes backgroundmove {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(2);
+    }
 }
 
 .solar-system {
+    margin-inline: auto;
     position: relative;
     width: 800px;
     height: 800px;
     margin-bottom: 4em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 @media (max-width: 820px) {
     .scroll {
-        width: 360px;
-        height: 800px;
+        width: 400px;
         overflow: hidden;
         overflow-x: scroll;
         overflow-y: scroll;
@@ -65,6 +86,33 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    background-size: cover;
+    background-position: center;
+}
+
+.object::before,
+.object::after {
+    --scale: 0;
+    position: absolute;
+    top: -.5em;
+    left: 50%;
+    transform: translate(-50%, -100%) scale(var(--scale));
+    transition: 150ms transform;
+    transform-origin: bottom center;
+}
+
+.object::before {
+    content: attr(data-tooltip);
+    color: var(--light);
+    padding: .5em;
+    border-radius: .4em;
+    width: max-content;
+    background: rgba(82, 29, 80, 0.863);
+
+}
+
+.object:hover::before {
+    --scale: 1;
 }
 
 .orbit {
@@ -79,58 +127,56 @@ body {
 #sun {
     height: 80px;
     width: 80px;
+    background-image: url('img/Sun.png');
 }
-
-/* [data-tooltip] {
-    position: relative;
-}
-
-[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 200%;
-    border-bottom: 1px solid white;
-    background: gray;
-} */
 
 #mercury {
     height: 7px;
     width: 7px;
+    background-image: url('img/Mercury.png');
 }
 
 #venus {
     height: 16px;
     width: 16px;
+    background-image: url('img/Venus.png');
 }
 
 #earth {
     height: 16px;
     width: 16px;
+    background-image: url('img/Earth.png');
 }
 
 #mars {
     height: 10px;
     width: 10px;
+    background-image: url('img/Mars.png');
 }
 
 #jupiter {
     height: 64px;
     width: 64px;
+    background-image: url('img/Jupiter.png');
 }
 
 #saturn {
     height: 64px;
     width: 160px;
+    background-image: url('img/Saturn.png');
 }
 
 #uranus {
     height: 24px;
     width: 24px;
+    background-image: url('img/Uranus.png');
+
 }
 
 #neptune {
     height: 24px;
     width: 24px;
+    background-image: url('img/Neptune.png');
 }
 
 .o-mercury {
@@ -185,6 +231,7 @@ body {
 #moon {
     height: 5px;
     width: 5px;
+    background-image: url('img/Moon.png');
 }
 
 .o-moon {

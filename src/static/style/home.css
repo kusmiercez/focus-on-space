@@ -1,0 +1,153 @@
+.home-container {
+    height: 100vh;
+}
+
+.home-container img {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: animate 8s ease-in-out infinite;
+}
+
+.star.star1 {
+    animation-delay: 0s;
+    background: url(img/star1.png);
+}
+
+.star.star2 {
+    animation-delay: -1s;
+    background: url(img/star2.png);
+}
+
+.star.star3 {
+    animation-delay: -2s;
+    background: url(img/star4.png);
+}
+
+.star.star4 {
+    animation-delay: -3s;
+    background: url(img/star7.png);
+}
+
+@keyframes animate {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        opacity: 0;
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        opacity: 1;
+    }
+}
+
+.box {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: antiquewhite;
+}
+
+.box span,
+.box .clock {
+    display: flex;
+    justify-content: end;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.clock span {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--primary-hover);
+    width: 32px;
+}
+
+.clock #hour,
+.clock #minutes {
+    border-right: none;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    width: 50%;
+    transform: translate(-30%, -80%);
+    color: antiquewhite;
+}
+
+.title h1 {
+    font-size: 3.4rem;
+    font-weight: 700;
+
+}
+
+.title h2 {
+    font-size: 1.8rem;
+    font-weight: lighter;
+}
+
+.solar-system-nav {
+    margin-top: 1.6em;
+}
+
+.solar-system-nav .icon {
+    background-image: url('img/solar_system_icon_color.png');
+    height: 7em;
+    width: 7em;
+    background-position: center;
+    background-size: cover;
+    transition: all .3s;
+}
+
+.solar-system-nav .icon:hover {
+    transform: scale(1.5) rotate(360deg);
+}
+
+@media (max-width: 475px) {
+    .home-content {
+        top: 70%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .title h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+        padding-bottom: .8rem;
+    }
+
+    .title h2 {
+        font-size: 1.2rem;
+    }
+
+    .controls,
+    .solar-system-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

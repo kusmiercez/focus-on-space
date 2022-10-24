@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/common-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="../scripts/nav.js"></script>
+    <script defer src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a90b2d5158.js" crossorigin="anonymous"></script>
+    <title>Focus on Space</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div><a href="../index.html" class="brand-title"></a></div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../news/news.html">News</a></li>
+                <li class="expandable-li">
+                    <input type="checkbox" id="more-list">
+                    <label for="more-list">More <i class="fa-solid fa-caret-down"></i></label>
+                    <ul class="dropdown">
+                        <li><a href="../solar-system/solar-system.html">Solar System</a></li>
+                        <li><a href="../climate/climate.html">Climate</a></li>
+                        <li><a href="picture.html">Picture of the day</a></li>
+                    </ul>
+                </li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="picture">
+        <div class="container">
+            <h1>Picture of the Day</h1>
+            <p class="date"></p>
+            <div class="pic"></div>
+            <p class="copy">Copyright: <span class="pic-copyright"></span></p>
+            <h3 class="pic-title"></h3>
+            <p class="pic-description"></p>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+.climate-change-cards {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    padding: 10px 20px;
+}
+
+.card {
+    text-align: center;
+    padding: .5em;
+    margin-bottom: 1em;
+    width: 100%;
+    height: 220px;
+    margin-top: 1em;
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    cursor: default;
+}
+
+@media (max-width: 450px) {
+    .container {
+        padding-top: .6em;
+    }
+    
+    .container h1 {
+        font-size: 2em;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1250px) {
+    .climate-change-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 670px) {
+    .climate-change-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 460px) {
+    .climate-change-cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        max-width: 270px;
+    }
+}
+
+.card .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+    height: 70px;
+    font-weight: 700;
+}
+
+.card .num {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.co2 .num {
+    background: rgb(1, 1, 9);
+    background: linear-gradient(90deg, rgb(224, 159, 30) 0%, rgb(212, 39, 9) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.temp .num {
+    background: rgb(1, 1, 9);
+    background: linear-gradient(90deg, rgb(230, 167, 226) 0%, rgba(127, 40, 124, 0.996) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.arctic .num {
+    background: rgb(1, 1, 9);
+    background: linear-gradient(90deg, rgb(188, 218, 244) 0%, rgba(22, 137, 186, 0.996) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.ice .num {
+    background: rgb(1, 1, 9);
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(114, 109, 109, 0.996) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.sea .num {
+    background: rgb(1, 1, 9);
+    background: linear-gradient(90deg, rgb(228, 236, 193) 0%, rgba(162, 202, 18, 0.996) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.ocean .num {
+    background: rgb(1, 1, 9);
+    background: linear-gradient(90deg, rgb(193, 236, 227) 0%, rgba(17, 215, 185, 0.996) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#temp-chart,
+#co2-chart {
+    background-color: rgb(39, 32, 41);
+    margin-bottom: 1.6em;
+}
+
+.carbon-dioxide {
+    margin-bottom: 2em;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-block: .8em;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: .6em;
+    text-transform: uppercase;
+}
+
+.up-date {
+    font-style: italic;
+}
+
+.container p {
+    margin-block: 1em;
+}
+
+table {
+    font-size: 1.6em;
+    margin-block: .8em 1.4em;
+    background: rgb(1, 1, 9);
+    background: linear-gradient(90deg, rgb(224, 159, 30) 0%, rgb(212, 39, 9) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.link-to-visualization p {
+    font-weight: 700;
+}
+
+.link-to-visualization {
+    text-align: center;
+}
+
+.link-to-visualization button {
+    right: 10px;
+    margin-right: 10px;
+    margin-bottom: 6px;
+    width: 200px;
+    height: 45px;
+    font-size: 1.1em;
+    background-color: transparent;
+    color: var(--light);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: .25em;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.modal-shadow {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .80);
+}
+
+.data-visualization {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, .5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .1);
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    border-left: 1px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    padding: 1.2em;
+}
+
+video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4em;
+    height: 100%;
+    width: 100%;
+}
+
+@media (max-width: 1450px) {
+    .data-visualization {
+        width: 90%;
+    }
+}
+
+.exit-btn {
+    position: absolute;
+    right: 20px;
+    top: 14px;
+}
+
+.exit-btn .fa-xmark {
+    font-size: 26px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.exit-btn .fa-xmark:hover {
+    transform: rotate(180deg) scale(1.4);
+    color: var(--primary-hover);
+}

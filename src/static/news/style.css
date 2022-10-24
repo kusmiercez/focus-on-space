@@ -26,18 +26,6 @@
     }
 }
 
-@media (max-width: 450px) {
-
-    .container h1::before,
-    .container h1::after {
-        content: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
-    }
-
-    .container h1 {
-        font-size: 2em;
-    }
-}
-
 .grid a {
     text-decoration: none;
     color: var(--light);
@@ -55,6 +43,6 @@
     background-position: center;
 }
 
-.news {
-    padding: .8em;
+.news-title {
+    padding: 10px;
 }

@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/common-style.css">
+    <link rel="stylesheet" href="style/home.css">
     <script defer src="scripts/nav.js"></script>
     <script defer src="scripts/clock.js"></script>
     <script src="https://kit.fontawesome.com/a90b2d5158.js" crossorigin="anonymous"></script>
@@ -26,14 +27,21 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="news/news.html">News</a></li>
-                <li><a href="weather/weather.html">Weather</a></li>
-                <li><a href="pictures/pictures.html">Pictures</a></li>
+                <li class="expandable-li">
+                    <input type="checkbox" id="more-list">
+                    <label for="more-list">More <i class="fa-solid fa-caret-down"></i></label>
+                    <ul class="dropdown">
+                        <li><a href="solar-system/solar-system.html">Solar System</a></li>
+                        <li><a href="climate/climate.html">Climate</a></li>
+                        <li><a href="picture/picture.html">Picture of the day</a></li>
+                    </ul>
+                </li>
                 <li><a href="contact/contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
     <div class="home-container">
-        <img src="img/bg.jpg" class="bg" alt="" />
+        <img src="style/img/bg.jpg" class="bg" alt="Background image" />
         <div class="star star1"></div>
         <div class="star star2"></div>
         <div class="star star3"></div>
@@ -41,7 +49,7 @@
         <div class="box">
             <span id="day"></span>
             <span id="date"></span>
-           <div class="clock">
+            <div class="clock">
                 <span id="hour"></span>
                 <span id="minutes"></span>
                 <span id="seconds"></span>
@@ -52,9 +60,10 @@
                 <h1>Astronomy portal</h1>
                 <h2>The universe and its riddles</h2>
             </div>
-            <div class="controls">
-                <a href="solar-system/solar-system.html"><button class="more">Learn more</button></a>
-                <a href="video/video.html"><button class="video">Watch</button></a>
+            <div class="solar-system-nav">
+                <a href="solar-system/solar-system.html">
+                    <div class="icon"></div>
+                </a>
             </div>
         </div>
     </div>

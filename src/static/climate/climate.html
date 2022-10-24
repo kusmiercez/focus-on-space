@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/common-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="../scripts/nav.js"></script>
+    <script defer type="module" src="charts.js"></script>
+    <script defer src="co2Visualization.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a90b2d5158.js" crossorigin="anonymous"></script>
+
+    <title>Focus on Space</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div><a title="a" href="../index.html" class="brand-title"></a></div>
+        <a href="#" title="a" class="toggle-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../news/news.html">News</a></li>
+                <li class="expandable-li">
+                    <input type="checkbox" id="more-list">
+                    <label for="more-list">More <i class="fa-solid fa-caret-down"></i></label>
+                    <ul class="dropdown">
+                        <li><a href="../solar-system/solar-system.html">Solar System</a></li>
+                        <li><a href="climate.html">Climate</a></li>
+                        <li><a href="../picture/picture.html">Picture of the day</a></li>
+                    </ul>
+                </li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="climate">
+        <div class="container">
+            <h1>Climate change</h1>
+            <div class="climate-change-cards">
+                <div class="card co2">
+                    <div class="title">Carbon dioxide</div>
+                    <div class="num">419</div>
+                    <div>parts per million</div>
+                </div>
+                <div class="card temp">
+                    <div class="title">Global temperature</div>
+                    <div class="num">1.01</div>
+                    <div>°C since 1880</div>
+                </div>
+                <div class="card arctic">
+                    <div class="title">Arctic sea ice min extent</div>
+                    <div class="num">12.6</div>
+                    <div>% per decade since 1979</div>
+                </div>
+                <div class="card ice">
+                    <div class="title">Ice sheets</div>
+                    <div class="num">427</div>
+                    <div>billion metric tons per year</div>
+                </div>
+                <div class="card sea">
+                    <div class="title">Sea level</div>
+                    <div class="num">4</div>
+                    <div>inches since January 1993</div>
+                </div>
+                <div class="card ocean">
+                    <div class="title">Ocean warming</div>
+                    <div class="num">337</div>
+                    <div>zettajoules since 1955</div>
+                </div>
+            </div>
+            <div class="carbon-dioxide">
+                <h2>Carbon Dioxide</h2>
+                <div class="split">
+                    <div class="decription">
+                        <h3>Recent Global CO2 Trend</h3>
+                        <table>
+                            <p class="up-date">Last Updated: October 11, 2022</p>
+                            <tr>
+                                <td>October 10: </td>
+                                <td> 417.82 ppm</td>
+                            </tr>
+                            <tr>
+                                <td>October 9:</td>
+                                <td>417.81 ppm</td>
+                            </tr>
+                            <tr>
+                                <td>October 8:</td>
+                                <td>417.81 ppm</td>
+                            </tr>
+                            <tr>
+                                <td>October 7:</td>
+                                <td>417.80 ppm</td>
+                            </tr>
+                            <tr>
+                                <td>October 6:</td>
+                                <td>417.80 ppm</td>
+                            </tr>
+                        </table>
+                        <p>Carbon dioxide (CO2) is an important heat-trapping gas, or greenhouse gas, that comes
+                            from
+                            the
+                            extraction and burning of fossil fuels (such as coal, oil, and natural gas), from
+                            wildfires,
+                            and
+                            from natural processes like volcanic eruptions.</p>
+                        <p>The graph show monthly mean carbon dioxide globally averaged over marine surface sites.
+                            The
+                            Global Monitoring Division of NOAA/Earth System Research Laboratory has measured carbon
+                            dioxide
+                            and other greenhouse gases for several decades at a globally distributed network of air
+                            sampling
+                            sites [Conway, 1994]. All years since 1980 are shown on the graph. The last year of data
+                            are
+                            still preliminary, pending recalibrations of reference gases and other quality control
+                            checks.
+                        </p>
+                    </div>
+                    <div class="chart">
+                        <h3>Trends in Atmospheric Carbon Dioxide</h3>
+                        <canvas id="co2-chart"></canvas>
+                        <p>The uncertainty in the global annual mean is estimated using a monte carlo technique that
+                            computes 200 global annual averages, each time using a slightly different set of measurement
+                            records from the NOAA GML cooperative air sampling network. The reported uncertainty is the
+                            mean of the standard deviations for each annual average using this technique.
+                            CO2 expressed as a mole fraction in dry air, micromol/mol, abbreviated as ppm.</p>
+                        <div class="link-to-visualization">
+                            <p>See the global carbon dioxide (CO₂) data visualization for September 2002-May 2022</p>
+                            <div class="btn">
+                                <button>Data visualization</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-shadow">
+                    <div class="data-visualization">
+                        <div class="video">
+                            <div class="exit-btn"><i class="fa-solid fa-xmark"></i></div>
+                            <video controls="" name="media"
+                                src="mp4/co2airs.mp4"
+                                type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="global-temp">
+                <h2>Global Temperature</h2>
+                <p>This graph shows the change in global surface temperature compared to the long-term average from 1951
+                    to 1980. Nineteen of the hottest years have occurred since 2000, with the exception of 1998. The
+                    year 2020 tied with 2016 for the hottest year on record since recordkeeping began in 1880 (source:
+                    NASA/GISS).</p>
+                <h3>Global Land-Ocean temperature index</h3>
+                <canvas id="temp-chart"></canvas>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
